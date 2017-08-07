@@ -12,6 +12,6 @@ console.log('Loaded!');
         setInterval( function() {
             marginLeft += 10;
             img.style.marginLeft = marginLeft.toString() + "px";
-        }; , "100")};
+        } , "100")};
     
 
