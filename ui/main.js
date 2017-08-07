@@ -1,8 +1,6 @@
 console.log('Loaded!');
 
 
-`<button>Click me to move image</button>`;
-
 
 
 
