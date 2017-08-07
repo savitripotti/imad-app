@@ -4,12 +4,12 @@ element.innerHTML="new value";
 //to move the object
 var img = document.getElementById('madi');
 var marginLeft = '0';
-function moveRight () {
+
+img.onClick = function(){
+    var interval = setInterval(function  () {
     marginLeft = marginLeft + 10;
     img.style.marginLeft = marginLeft.toString() + 'px';
 }
-
-img.onClick = function(){
-    var interval = setInterval(moveRight, 100);
+, 100);
 };
 
