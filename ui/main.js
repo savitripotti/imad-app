@@ -9,6 +9,6 @@ function moveRight(){
 }
 var img = document.getElementById('madi');
 img.onClick = function(){
-    var interval = setinterval(moveRight, 100);
+    var interval = setInterval(moveRight, 100);
 
 };
