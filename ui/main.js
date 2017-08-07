@@ -1,15 +1,17 @@
 console.log('Loaded!');
-var element = document.getElementById('main-text');
-element.innerHTML="new value";
-//to move the object
-var img = document.getElementById('madi');
-var marginLeft = '0';
-marginLeft.toString() + "px";
-function moveRight () {
-    marginLeft = marginLeft + 10;
-    img.style.marginLeft = marginLeft + 'px';
-}
 
-img.onClick = function(){
-    var interval = setInterval(moveRight, 100);
-};
+
+`<button>Click me to move image</button>`;
+
+'<img src="ui/madi.png" id="image" />';
+
+
+    var img = document.getElementById("madi");
+    var marginLeft = 0;
+    img.onclick = function() {
+        setInterval( function() {
+            marginLeft += 10;
+            img.style.marginLeft = marginLeft.toString() + "px";
+        }; , "100")};
+    
+
