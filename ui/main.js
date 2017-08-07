@@ -3,7 +3,7 @@ var element = document.getElementById('main-text');
 element.innerHTML="new value";
 //to move the object
 var img = document.getElementById('madi');
-var marginLeft = 0;
+var marginLeft = '0';
 function moveRight () {
     marginLeft = marginLeft + 10;
     img.style.marginLeft = marginLeft + 'px';
@@ -11,6 +11,4 @@ function moveRight () {
 
 img.onClick = function(){
     var interval = setInterval(moveRight, 100);
-
-
 };
