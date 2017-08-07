@@ -6,7 +6,7 @@ var marginLeft = 0;
 
 img.onClick = function(){
 setInterval(function  () {
-    marginLeft = marginLeft + 10;
+    marginLeft+= 10;
     img.style.marginLeft = marginLeft.toString() + 'px';
 }
 , 100);
