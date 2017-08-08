@@ -8,8 +8,8 @@ console.log('Loaded!');
     var marginLeft = 0;
     img.onclick = function() {
         setInterval( function() {
-            marginLeft += 10;
+            marginLeft += 5;
             img.style.marginLeft = marginLeft.toString() + "px";
-        } , "100")};
+        } , "50")};
     
 
