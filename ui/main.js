@@ -23,7 +23,7 @@
         }
         var ul = document.getElementById('namelist');
         ul.innerHTML=list;
-        }
+        
 
            
            console.log('ok');
