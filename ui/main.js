@@ -1,5 +1,4 @@
      console.log('successful');
-    console.log("JS Loaded");
              var button = document.getElementById('counter');
         button.onclick = function(){
         var request = new XMLHttpRequest();
