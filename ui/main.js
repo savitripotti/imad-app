@@ -7,10 +7,11 @@ console.log('Loaded!');
     var img = document.getElementById("madi");
     
     img.onclick = function() {
-     function() {
-        
-            img.style.marginLeft = "100px";
-}
-};
+       setInterval( function() {
+    
+            img.style.marginLeft =  "100px";
+        } , "50")};
+    
+
     
 
