@@ -5,11 +5,11 @@ console.log('Loaded!');
 
 
     var img = document.getElementById("madi");
-    var marginLeft = 0;
+    var marginRight = 0;
     img.onclick = function() {
         setInterval( function() {
-            marginLeft += 5;
-            img.style.marginLeft = marginLeft.toString() + "px";
+            marginRight += 5;
+            img.style.marginRight = marginRight.toString() + "px";
         } , "50")};
     
 
