@@ -1,17 +1,9 @@
 console.log('Loaded!');
 
-
-
-
-
     var img = document.getElementById("madi");
-    
+    var marginLeft = 0;
     img.onclick = function() {
-       setInterval( function() {
-    
-            img.style.marginLeft =  "100px";
-        } , "50")};
-    
-
-    
-
+        setInterval( function() {
+            marginLeft += 10;
+            img.style.marginLeft = marginLeft.toString() + "px";
+        } , "100")};
