@@ -1,4 +1,4 @@
-     console.log('success');
+     console.log('successful');
      var button = document.getElementById('counter');
         button.onclick = function(){
         var request = new XMLHttpRequest();
