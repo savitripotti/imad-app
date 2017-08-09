@@ -68,7 +68,7 @@ app.get('/counter', function (req, res){
     res.send(counter.toString());
 });
 var names = [];
-app.get('/submit-name/:name', function(req, res){
+app.get('/submit-name', function(req, res){//our request looks like this:/submit-name?name=xxxx
     var name = req.query.name;
     names.push(name);
     res.send(JSON.stringify(names));
