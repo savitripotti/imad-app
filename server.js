@@ -118,8 +118,8 @@ pool.query('SELECT * FROM  "user" WHERE username = $1', [username], function(err
         else{
             var dbString = result.rows[0].password;
             var salt = dbString.split('$')[2];
-            var hashedpassword = hash(password, salt);
-            if(hashedpassword === dbString){
+            var hashedPassword = hash(password, salt);
+            if(hashedPassword === dbString){
                 res.send('credentials correct');
             }
             else{
