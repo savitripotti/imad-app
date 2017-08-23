@@ -98,6 +98,38 @@ pool.query('INSERT INTO "user" (username, password) VALUES($1, $2)', [username, 
         }  
 });
 });
+app.get('/login', function(req, res){
+    //Ihis function as input will take username and password as input
+    var username = req.body.username;
+    var password = req.body.password;
+ 
+var dbString = hash(password,salt);
+pool.query('select * from  "user" where username = $1', [username], function(err, result){
+  if(err){
+            res.status(500).send(err.toString());
+        }
+        else{
+            if(result.rows.length === 0)
+            {
+            
+          res.send(403).send('username/password is invalid');
+          
+        }  
+        else{
+            var dbString = result.rows[0].password;
+            var salt = dbString.split('$')['2'];
+            var hashedpassword = hash(password, salt);
+            if(hashedpassword === dbString){
+                res.send('credentials correct');
+            }
+            else{
+                res.send(403).send('username/password is invalid');
+            }
+            }
+        }
+        
+});
+});
 
 var pool = new Pool(config);
 app.get('/test-db', function(req, res){
