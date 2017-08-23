@@ -98,7 +98,7 @@ pool.query('INSERT INTO "user" (username, password) VALUES($1, $2)', [username, 
         }  
 });
 });
-app.get('/login', function(req, res){
+app.post('/login', function(req, res){
     //Ihis function as input will take username and password as input
     var username = req.body.username;
     var password = req.body.password;
