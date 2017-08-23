@@ -23,23 +23,27 @@
             if(request.readyState === XMLHttpRequest.DONE)
             {
                 if(request.status === 200){
-                  var names = request.responseText;
-                  names = JSON.parse(names);
-        var list = '';
-        for(var i=0;i<names.length;i++){
-            list+='<li>' + names[i] + '</li>';
-        }  
-         var ul = document.getElementById('namelist');
-        ul.innerHTML=list;
-        
+                 console.log('user logged in');
+                 alert('logged in successfully');
                 }
-            }
+                else if(request.status === 403){
+                    alert('username/password is invalid');
+                }
+               else if(request.stauts === 500){
+                   alert('some internal error');
+               }     
+                }
         };
-        var nameinput = document.getElementById('name');
-        var name = nameinput.value;
+        var username = document.getElementById('username').value;
+         var password = document.getElementById('password').value;
+         console.log(username);
+         console.log(password);
+         
         
-        request.open('GET','http://venisavitri.imad.hasura-app.io/submit-name?name=' + name,true);
-        request.send(null);
+        request.open('POST','http://venisavitri.imad.hasura-app.io/submit-name?name=' + name,true);
+         request.setRequestHeader('content-Type','application/json');
+        
+        request.send(JSON.stringify({username: username, password: password}));
         
         };
 
