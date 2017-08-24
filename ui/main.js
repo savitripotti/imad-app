@@ -20,6 +20,7 @@
         };
          request.open('POST','http://venisavitri.imad.hasura-app.io/login' ,true);
          request.setRequestHeader('Content-Type','application/json');
+         console.log('hai');
          request.send(JSON.stringify({username: username , password: password}));
         
         };
