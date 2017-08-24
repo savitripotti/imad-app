@@ -103,7 +103,7 @@ app.post('/login', function(req, res){
     //Ihis function as input will take username and password as input
     var username = req.body.username;
     var password = req.body.password;
- 
+ console.log('hai');
 var dbString = hash(password,salt);
 pool.query('SELECT * FROM  "user" WHERE username = $1', [username], function(err, result){
   if(err){
