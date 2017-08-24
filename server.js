@@ -125,7 +125,7 @@ pool.query('SELECT * FROM  "user" WHERE username = $1', [username], function(err
             var hashedPassword = hash(password, salt);
             if(hashedPassword === dbString){
                 //set the session
-                req.session.outh = {userId: result.rows[0].id};
+                req.session.auth = {userId: result.rows[0].id};
                 
                 res.send('credentials correct');
             }
@@ -139,8 +139,8 @@ pool.query('SELECT * FROM  "user" WHERE username = $1', [username], function(err
 });
 app.get('/check_login', function(req, res)
 {
-    if(req.session && req.session.outh && req.session.outh.userId){
-        res.send('you are logged in' + req.session.outh.userId.toString());
+    if(req.session && req.session.auth && req.session.auth.userId){
+        res.send('you are logged in' + req.session.auth.userId.toString());
     }
     else{
         res.send('you are not logged in');
