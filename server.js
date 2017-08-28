@@ -4,7 +4,7 @@ var path = require('path');
 var Pool = require('pg').Pool;
 var crypto = require('crypto');
 var bodyParser = require('body-parser');
-var session = require('express-session');
+
 var config = {
     user : 'venisavitri',
     database : 'venisavitri',
@@ -16,10 +16,7 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
-app.use(session({
-      secret: 'someRandomSecretValue', //value used to encrypt the cookies 
-      cookie: { maxAge: 1000 * 60 * 60 * 24 * 30 }//setted for one month
-}));
+
 var articles= {
         'article-one' :
         {
@@ -136,20 +133,6 @@ pool.query('SELECT * FROM  "user" WHERE username = $1', [username], function(err
         }
         
 });
-});
-app.get('/check_login', function(req, res)
-{
-    if(req.session && req.session.auth && req.session.auth.userId){
-        res.send('you are logged in' + req.session.auth.userId.toString());
-    }
-    else{
-        res.send('you are not logged in');
-    }
-    
-});
-app.get('/logout', function(req, res){
-    delete req.session.auth;
-    res.send('you are logged out');
 });
 
 var pool = new Pool(config);
