@@ -100,8 +100,15 @@ pool.query('INSERT INTO "user" (username, password) VALUES($1, $2)', [username, 
             res.status(500).send(err.toString());
         }
         else{
-            res.send('user created' + username);
-        }  
+           var message = "User successfully created: " + username;
+          var resp = {
+                    message : message
+          };
+          res.send(JSON.stringify(resp));
+          //res.send('User successfully created: ' + username);
+      }
+        
+   
 });
 });
 app.post('/login', function(req, res){
