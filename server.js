@@ -104,6 +104,7 @@ pool.query('INSERT INTO "user" (username, password) VALUES($1, $2)', [username, 
           var resp = {
                     message : message
           };
+        res.setHeader('Content-Type', 'application/json');
           res.send(JSON.stringify(resp));
           //res.send('User successfully created: ' + username);
       }
