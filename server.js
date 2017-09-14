@@ -100,13 +100,8 @@ pool.query('INSERT INTO "user" (username, password) VALUES($1, $2)', [username, 
             res.status(500).send(err.toString());
         }
         else{
-           var message = "User successfully created: " + username;
-          var resp = {
-                    message : message
-          };
-        res.setHeader('Content-Type', 'application/json');
-          res.send(JSON.stringify(resp));
-          //res.send('User successfully created: ' + username);
+           res.setHeader('Content-Type', 'application/json');
+           res.send(JSON.parse('{"message":"user created"}'));
       }
         
    
