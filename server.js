@@ -130,9 +130,9 @@ pool.query('SELECT * FROM  "user" WHERE username = $1', [username], function(err
                 
                 req.session.auth = {userId: result.rows[0].id};
                 
-                
-                
-                res.send('credentials correct');
+                 res.setHeader('Content-Type', 'application/json');
+                    res.send(JSON.parse('{"message":"login created"}'));
+                     res.send('credentials correct');
             }
             else{
                 res.send(403).send('username/password is invalid');
